@@ -7,7 +7,7 @@ Asegúrate de tener Node.js y npm instalados en tu sistema antes de continuar:
 - [Node.js](https://nodejs.org/en/download)
 - [npm](https://www.npmjs.com/)
 
-## Verificacion
+## Verificación
 
 ```
 node -v
@@ -17,13 +17,13 @@ tsc -v
 
 ## Generar archivo tsconfig.json
 
-Creamos la carpeta build. Depsués ejecutamos el comando:
+Creamos la carpeta `build`. Depsués ejecutamos el comando:
 
 ```
 tsc --init
 ```
 
-Eso generará el json tscongig. A continuación, descomentamos outDir estableciendo el parametro en ./build y opcion de destino a: ES2015.
+Eso generará el archivo `tsconfig.json`. A continuación, descomentamos `outDir` estableciendo el parametro en ./build y opción de destino a: ES2015.
 
 Ejecutamos el siguiente comando:
 
