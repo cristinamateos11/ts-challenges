@@ -125,8 +125,26 @@ const objectResult: resultTuple = {
 
 // 14 -> First of Array
 console.log("**** Exercise 14 ****");
+/**
+ * <T extends any[]> -> tipo generico de matriz, se asegura de que solo se pueden usar tipos que son arreglos (tuplas).
+ * T extends [] ? never : T[0] -> operador condicional. Si T es una matriz vacía, el resultado es never, significa que no hay un primer elemento. 
+ * Si T no es una matriz vacía, el resultado es T[0], que es el tipo del primer elemento de la matriz.
+ */
+type First<T extends any[]> = T extends [] ? never : T[0];
+
+type arr1 = ['a', 'b', 'c'];
+type arr2 = [3, 2, 1];
+
+type head1 = First<arr1> // expected to be 'a'
+type head2 = First<arr2> // expected to be 3
+
+// const value1: head1 = 'b'; // incorrecto
+// const value2: head2 = 3; // correcto
+
+// console.log(value1);
 
 
+// 18 -> Length of tuple
+console.log("**** Exercise 18 ****");
 
-
-  
+type Length<T extends any[]> = T['length'];

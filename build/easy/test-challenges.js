@@ -62,4 +62,12 @@ const objectResult = {
     'model X': 'model X',
     'model Y': 'model Y'
 };
-console.log(objectResult["model 3"]);
+// console.log(objectResult["model 3"]);
+// console.log(objectResult);
+// 14 -> First of Array
+console.log("**** Exercise 14 ****");
+// const value1: head1 = 'b'; // incorrecto
+// const value2: head2 = 3; // correcto
+// console.log(value1);
+// 18 -> Length of tuple
+console.log("**** Exercise 18 ****");
