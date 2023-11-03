@@ -1,25 +1,37 @@
 # ts-challenges
 
-Instalacion
-Node.js
-npm
+## Instalación
 
+Asegúrate de tener Node.js y npm instalados en tu sistema antes de continuar:
 
-Verificacion
+- [Node.js](https://nodejs.org/en/download)
+- [npm](https://www.npmjs.com/)
+
+## Verificacion
+
+```
 node -v
-npm install -g typescript (instalar de manera global)
+npm install -g typescript
 tsc -v
+```
 
-Generar archivo tsconfig.json
+## Generar archivo tsconfig.json
+
 tsc --init
 creamos carpeta build, descomentamos outDir estableciendo el parametro en ./build
+y opcion de destino a: ES2015
 tsc
 
 Registro en la consola
 node ./build/nombre_archivo.js
 
-ERRORES
-windows powershell como admin
+## Errores
+
+Al ejecutar el comando `tsc --init` puede saltarnos un error. Para ello, abrimos la windows powershell como administrador y ejecutamos los siguientes comandos:
+
+```
 Get-ExecutionPolicy -List
 Set-ExecutionPolicy RemotedSigned -Scope CurrentUser
-(ahora el comando init deberia ejecutarse sin errrores)
+```
+
+Ahora el comando init deberia ejecutarse sin errrores.
