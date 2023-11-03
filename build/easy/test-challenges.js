@@ -39,7 +39,7 @@ const resultWithoutK = {
     weight: 72,
     height: 183
 };
-console.log(resultWithoutK);
+// console.log(resultWithoutK);
 // resultWithoutK.name = "Bob"; // genera error porque es una propiedad de solo lectura
 // resultWithoutK.age = 40;
 function displayResultPersonCute(person) {
@@ -48,4 +48,18 @@ function displayResultPersonCute(person) {
     console.log(`Weight: ${person.weight}`);
     console.log(`Height: ${person.height}`);
 }
-console.log(displayResultPersonCute(resultWithoutK));
+// console.log(displayResultPersonCute(resultWithoutK));
+// 11 -> Tuple of Object
+console.log("**** Exercise 11 ****");
+/**
+ * as const -> significa que no se pueden modificar ni reasignar los valores de la tupla después de que se haya declarado.
+ * tuple[0] = 'Jeep'; // Error
+ */
+const tuple = ['tesla', 'model 3', 'model X', 'model Y']; // tupla (array de tipos)
+const objectResult = {
+    'tesla': 'tesla',
+    'model 3': 'model 3',
+    'model X': 'model X',
+    'model Y': 'model Y'
+};
+console.log(objectResult["model 3"]);

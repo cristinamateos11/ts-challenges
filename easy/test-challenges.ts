@@ -87,7 +87,7 @@ const resultWithoutK: ReadonlyPerson = {
     weight: 72,
     height: 183
 };
-console.log(resultWithoutK);
+// console.log(resultWithoutK);
 // resultWithoutK.name = "Bob"; // genera error porque es una propiedad de solo lectura
 // resultWithoutK.age = 40;
 
@@ -97,9 +97,34 @@ function displayResultPersonCute(person: ReadonlyPerson) {
     console.log(`Weight: ${person.weight}`);
     console.log(`Height: ${person.height}`);
 }
-console.log(displayResultPersonCute(resultWithoutK));
+// console.log(displayResultPersonCute(resultWithoutK));
 
+// 11 -> Tuple of Object
+console.log("**** Exercise 11 ****");
+/**
+ * as const -> significa que no se pueden modificar ni reasignar los valores de la tupla después de que se haya declarado.
+ * tuple[0] = 'Jeep'; // Error
+ */
+const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const; // tupla (array de tipos)
 
+type TupleToObject<T extends readonly any[]> = {
+    [K in T[number]]: K; // number accede a los tipos individuales de los elementos
+};
+
+type resultTuple = TupleToObject<typeof tuple>;
+
+const objectResult: resultTuple = {
+    'tesla': 'tesla',
+    'model 3': 'model 3',
+    'model X': 'model X',
+    'model Y': 'model Y'
+};
+
+// console.log(objectResult["model 3"]);
+// console.log(objectResult);
+
+// 14 -> First of Array
+console.log("**** Exercise 14 ****");
 
 
 
