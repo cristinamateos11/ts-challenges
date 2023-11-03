@@ -28,6 +28,24 @@ function tooManyTodo(todo) {
         return 'GREAT! ' + todo.author + ', you are doing well';
     }
 }
-console.log(tooManyTodo({ title: 'Sing', completed: true, author: 'Cris' }));
-console.log(tooManyTodo(bookResult)); // true
-console.log(tooManyTodo(result04)); // false
+// console.log(tooManyTodo({ title: 'Sing', completed: true, author: 'Cris' }));
+// console.log(tooManyTodo(bookResult)); // true
+// console.log(tooManyTodo(result04)); // false
+// 07 -> readonly
+console.log("**** Exercise 7 ****");
+const resultWithoutK = {
+    name: "Didac",
+    age: 22,
+    weight: 72,
+    height: 183
+};
+console.log(resultWithoutK);
+// resultWithoutK.name = "Bob"; // genera error porque es una propiedad de solo lectura
+// resultWithoutK.age = 40;
+function displayResultPersonCute(person) {
+    console.log(`Hi, ${person.name} ! This is your personal information:`);
+    console.log(`Age: ${person.age}`);
+    console.log(`Weight: ${person.weight}`);
+    console.log(`Height: ${person.height}`);
+}
+console.log(displayResultPersonCute(resultWithoutK));

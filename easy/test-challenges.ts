@@ -55,9 +55,53 @@ function tooManyTodo(todo: BookPreview) {
     }
  }
  
-console.log(tooManyTodo({ title: 'Sing', completed: true, author: 'Cris' }));
-console.log(tooManyTodo(bookResult)); // true
-console.log(tooManyTodo(result04)); // false
+// console.log(tooManyTodo({ title: 'Sing', completed: true, author: 'Cris' }));
+// console.log(tooManyTodo(bookResult)); // true
+// console.log(tooManyTodo(result04)); // false
+
+
+// 07 -> readonly
+console.log("**** Exercise 7 ****");
+/**
+ * keyof -> mantiene los tipos originales y readonly hace que las propiedades sean solo de lectura.
+ * si intentamos cambiar el valor de las propiedades, generará un error.
+ * En cambio, si no ponemos keyof, como no mantendrá los tipos originales, TODAS las propiedades seran de tipo any
+ * y si podremos cambiar el valor de esas propiedades sin que salga un error.
+ */
+type ReadonlyWithK<T extends keyof any> = {
+    readonly [K in T]: any;
+};
+
+interface Person {
+    name: string;
+    age: number;
+    weight: number;
+    height: number;
+}
+
+type ReadonlyPerson = ReadonlyWithK<keyof Person>;
+
+const resultWithoutK: ReadonlyPerson = {
+    name: "Didac",
+    age: 22,
+    weight: 72,
+    height: 183
+};
+console.log(resultWithoutK);
+// resultWithoutK.name = "Bob"; // genera error porque es una propiedad de solo lectura
+// resultWithoutK.age = 40;
+
+function displayResultPersonCute(person: ReadonlyPerson) {
+    console.log(`Hi, ${person.name} ! This is your personal information:`);
+    console.log(`Age: ${person.age}`);
+    console.log(`Weight: ${person.weight}`);
+    console.log(`Height: ${person.height}`);
+}
+console.log(displayResultPersonCute(resultWithoutK));
 
 
 
+
+
+
+  
