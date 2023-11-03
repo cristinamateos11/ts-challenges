@@ -17,13 +17,27 @@ tsc -v
 
 ## Generar archivo tsconfig.json
 
-tsc --init
-creamos carpeta build, descomentamos outDir estableciendo el parametro en ./build
-y opcion de destino a: ES2015
-tsc
+Creamos la carpeta build. Depsués ejecutamos el comando:
 
-Registro en la consola
+```
+tsc --init
+```
+
+Eso generará el json tscongig. A continuación, descomentamos outDir estableciendo el parametro en ./build y opcion de destino a: ES2015.
+
+Ejecutamos el siguiente comando:
+
+```
+tsc
+```
+
+## Registro en la consola
+
+Para poder ver los console.log y los resultados de nuestros archivos, ejecutamos el siguiente comando:
+
+```
 node ./build/nombre_archivo.js
+```
 
 ## Errores
 
