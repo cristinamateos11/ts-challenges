@@ -14,13 +14,15 @@ let result04 = {
     completed: false,
     author: 'Cristina'
 };
-console.log(result04);
-console.log(result04.author);
-// function tooManyScoops(dessert: IceCream) {
-//     if (dessert.scoops >= 4) {
-//        return dessert.scoops + ' is too many scoops!';
-//     } else {
-//        return 'Your order will be ready soon!';
-//     }
-//  }
-//  console.log(tooManyScoops({flavor: 'vanilla', scoops: 5}));
+// console.log(result04);
+// console.log(result04.author);
+function tooManyTodo(todo) {
+    if (todo.completed === false) {
+        return todo.author + ', You have to finish the task!';
+    }
+    else {
+        return 'GREAT!' + todo.author + ', you are doing well';
+    }
+}
+console.log(tooManyTodo({ title: 'Sing', completed: false, author: 'Cris' }));
+console.log(tooManyTodo(result04));
