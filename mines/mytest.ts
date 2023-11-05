@@ -27,6 +27,7 @@ console.log(s);
  * ventajas de tipado estático.
  */
 interface Sprites {
+    readonly id?: number,
     name: string,
     team: string,
     birthday: string;
