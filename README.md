@@ -1,4 +1,6 @@
-# ts-challenges
+<div align="center">
+<h1 align="center"> ts-challenges </h1> 
+</div>
 
 ## Instalación
 
