@@ -109,6 +109,19 @@ sprites.forEach((sprite) => {
 /**
  * Te pregunta sobre el team del sprite y te da toda la informacion
  */
-function chooseTeam() {
+function chooseTeam(teamName: string) {
+    const foundSprites = sprites.filter((sprite) =>
+        sprite.team.toLowerCase() === teamName.toLowerCase()
+    )
 
+    if (foundSprites.length > 0) {
+        foundSprites.forEach((sprite) => {
+            console.log(`${sprite.name} - Birthday: ${sprite.birthday}`);
+        });
+    } else {
+        console.log("No existe ningún sprite en el equipo " + teamName);
+    }
+  
 }
+
+chooseTeam('red team');

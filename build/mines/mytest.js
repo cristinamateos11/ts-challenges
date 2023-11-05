@@ -47,6 +47,30 @@ const sprites = [
         likes: ['Stew', 'Pumpkin', 'Red Grass'],
         hates: ['Bamboo Rice', 'Curry Powder', 'Junk Ore'],
         acquired: 'Ship at least 300 milk, eggs, and wool. You will need a total of 300 between the 3 types of items available, not 300 milk, 300 eggs, and 300 wool.'
+    },
+    {
+        name: 'Laine',
+        team: 'Red Team',
+        birthday: 'Summer 12',
+        likes: ['Apple Pie', 'Tomato', 'Red Grass'],
+        hates: ['Strawberry Milk', 'Wool', 'Fodder'],
+        acquired: 'Ship at least 500 milk, eggs, and wool.'
+    },
+    {
+        name: 'Essa',
+        team: 'Red Team',
+        birthday: 'Spring 26',
+        likes: ['Ice Cream', 'Diamond', 'Red Grass'],
+        hates: ['Sashimi', 'Bell Pepper', 'Stone'],
+        acquired: 'Ship at least 1000 milk, eggs, and wool.'
+    },
+    {
+        name: 'Betty',
+        team: 'Orange Team',
+        birthday: 'Summer 10',
+        likes: ['Buckwheat Noodles', 'Wool', 'Red Grass'],
+        hates: ['Sweet Potatoes', 'Bamboo Shoots', 'Perfume'],
+        acquired: 'Use the Touch Glove 100 times to cut wool. You need to have the glove and the Cutting Sheers equipped, then press Y in front of a sheep that has wool. You can then rub off the wool using the stylus.'
     }
 ];
 console.log(sprites);
@@ -59,3 +83,18 @@ for (const sprite of sprites) {
 sprites.forEach((sprite) => {
     console.log(`${sprite.name} Likes: ${sprite.likes.join(', ')}`);
 });
+/**
+ * Te pregunta sobre el team del sprite y te da toda la informacion
+ */
+function chooseTeam(teamName) {
+    const foundSprites = sprites.filter((sprite) => sprite.team.toLowerCase() === teamName.toLowerCase());
+    if (foundSprites.length > 0) {
+        foundSprites.forEach((sprite) => {
+            console.log(`${sprite.name} - Birthday: ${sprite.birthday}`);
+        });
+    }
+    else {
+        console.log("No existe ningún sprite en el equipo " + teamName);
+    }
+}
+chooseTeam('red team');
