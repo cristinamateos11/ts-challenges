@@ -50,7 +50,12 @@ const sprites = [
     }
 ];
 console.log(sprites);
-// Imprimir solo los likes de los duendes
+/**
+ * Imprimir nombre y likes de los sprites de 2 formas distintas
+ */
 for (const sprite of sprites) {
     console.log(`${sprite.name} Likes: ${sprite.likes.join(', ')}`);
 }
+sprites.forEach((sprite) => {
+    console.log(`${sprite.name} Likes: ${sprite.likes.join(', ')}`);
+});
