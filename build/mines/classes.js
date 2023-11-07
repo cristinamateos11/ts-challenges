@@ -9,6 +9,7 @@ class Car {
         this._make = make;
         this._color = color;
         this._doors = doors;
+        Car.numberOfCars++; // Incrementa el valor de la propiedad estatica
     }
     // Accessors
     get make() {
@@ -47,14 +48,34 @@ class Car {
     worker() {
         return this._make;
     }
+    static getNumberOfCars() {
+        return Car.numberOfCars;
+    }
 }
+// Properties
+Car.numberOfCars = 0; // New static property
 let myCar = new Car('Jeep Company', 'black', 3);
 console.log(myCar);
 console.log(myCar.color);
-console.log(myCar._color);
+// console.log(myCar._color); // al ser private no se puede 
 // console.log(myCar.doors = 5); // INCORRECTO
 let myCar2 = new Car('Ferrari Company', 'red');
 console.log(myCar2);
 console.log(myCar.accelerate(50));
 console.log(myCar.brake());
 console.log(myCar.turn('right'));
+console.log(Car.getNumberOfCars());
+class ElectricCar extends Car {
+    // Constructor
+    constructor(make, color, range, doors = 2) {
+        super(make, color, doors);
+        this._range = range;
+    }
+    // Acessors
+    get range() {
+        return this._range;
+    }
+    set range(range) {
+        this._range = range;
+    }
+}
