@@ -51,3 +51,21 @@ Set-ExecutionPolicy RemotedSigned -Scope CurrentUser
 ```
 
 Ahora el comando init deberia ejecutarse sin errrores.
+
+## 🔌 Plugins
+
+1. **ESLint**: Ayuda a mantener un código limpio y consistente mediante reglas de linting.
+
+2. **Prettier - Code Formatter**: Automatiza la formateo de tu código para mantenerlo limpio y legible.
+
+3. **Git Graph** (Opcional): Facilita la visualización de tu historial de Git y las ramas de tu proyecto.
+
+4. **Pretty TypeScript Errors** (Opcional): Hace que los mensajes de error de TypeScript sean más legibles y fáciles de entender.
+
+5. **vscode-icons** (Opcional): Agrega iconos coloridos a los archivos y carpetas.
+
+## ✨ Prettier
+
+`File -> Preferences -> Settings: editor.defaultFormatter = Prettier - Code Formatter`
+
+Activar función: **editor.formatOnSave** y **editor.formatOnType**
