@@ -71,3 +71,25 @@ console.log("**** Exercise 14 ****");
 // console.log(value1);
 // 18 -> Length of tuple
 console.log("**** Exercise 18 ****");
+// 43 -> Exclude
+console.log("**** Exercise 43 ****");
+// let resultExclude: Result = "a"; // type ""a"" is not assignable to type 'Result'
+let resultExclude = "b"; // b
+console.log(resultExclude);
+// 268 -> If
+console.log("**** Exercise 268 ****");
+let resultA = "a";
+// let resultB: B = "a"; // ERROR
+console.log(resultA);
+// 533 -> Concat
+console.log("**** Exercise 533 ****");
+let resultConcat = [1, 1, 1, 2, 2, 2];
+console.log(resultConcat);
+// 3057 -> Push
+console.log("**** Exercise 3057 ****");
+let resultPush = [1, 2, "3"];
+console.log(resultPush);
+// 3060 -> Unshift
+console.log("**** Exercise 3060 ****");
+let resultUnshift = [0, 1, 2];
+console.log(resultUnshift);

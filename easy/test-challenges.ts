@@ -147,4 +147,68 @@ type head2 = First<arr2> // expected to be 3
 // 18 -> Length of tuple
 console.log("**** Exercise 18 ****");
 
-type Length<T extends any[]> = T['length'];
+type Length<T extends any[]> = T["length"];
+
+type teslaModels = ["model 3", "model X", "model Y", "model S"];
+type teslaLength = Length<teslaModels>; // expected 4
+
+// 43 -> Exclude
+console.log("**** Exercise 43 ****");
+/**
+ * Devuelve un tipo que incluye todos los subtipos de T que NO son asignables a U.
+ * Si T es un subtipo de U, el resultado es never.
+ * Si T no es un subtipo de U, el resultado es T.
+ */
+type MyExclude<T, U> = T extends U ? never : T;
+type Result = MyExclude<"a" | "b" | "c", "a">; // expected "b" | "c"
+// let resultExclude: Result = "a"; // type ""a"" is not assignable to type 'Result'
+let resultExclude: Result = "b"; // b
+console.log(resultExclude);
+
+// 268 -> If
+console.log("**** Exercise 268 ****");
+/**
+ * If<C, T, F> es un tipo que te permite elegir entre dos tipos T y F basado en una condición booleana C.
+ * C -> puede ser true o false
+ * T y F -> pueden ser de cualquier tipo
+ * Condicion ternaria -> Si C es true, el resultado es T, de lo contrario, el resultado es F.
+ */
+type If<C extends boolean, T, F> = C extends true ? T : F;
+type A = If<true, "a", "b">; // como C es true, el tipo resultante es T que es -> 'a'
+type B = If<false, "a", "b">; // como C es false, el tipo resultanto es F que es -> 'b'
+let resultA: A = "a";
+// let resultB: B = "a"; // ERROR
+console.log(resultA);
+
+// 533 -> Concat
+console.log("**** Exercise 533 ****");
+/**
+ * T extends any[] y U extends any[] -> Significa que T y U deben ser tipos de tuplas.
+ * [...T, ...U] -> es la sintaxis de propagacion, crea una nueva tupla que contiene todos los elementos de T seguidos por todos los elementos de U.
+ */
+type Concat<T extends any[], U extends any[]> = [...T, ...U];
+type ResultConcat = Concat<[1, 1, 1], [2, 2, 2]>;
+let resultConcat: ResultConcat = [1, 1, 1, 2, 2, 2];
+console.log(resultConcat);
+
+// 3057 -> Push
+console.log("**** Exercise 3057 ****");
+/**
+ * La razón por la que solo propagamos T y no U es porque T es una tupla (un array de elementos),
+ * mientras que U es un solo elemento. Queremos agregar U al final de la tupla T, no propagar sus elementos en la tupla.
+ * Push agrega al final
+ */
+type Push<T extends any[], U> = [...T, U];
+type ResultPush = Push<[1, 2], "3">; // [1, 2, "3"]
+let resultPush: ResultPush = [1, 2, "3"];
+console.log(resultPush);
+
+// 3060 -> Unshift
+console.log("**** Exercise 3060 ****");
+/**
+ * Unshift agrega al principio
+ */
+type Unshift<T extends any[], U> = [U, ...T];
+type ResultUnshift = Unshift<[1, 2], 0>; // [0, 1, 2]
+let resultUnshift: ResultUnshift = [0, 1, 2];
+console.log(resultUnshift);
