@@ -77,9 +77,9 @@ console.log(sprites);
 /**
  * Imprimir nombre y likes de los sprites de 2 formas distintas
  */
-for (const sprite of sprites) {
-    console.log(`${sprite.name} Likes: ${sprite.likes.join(', ')}`);
-}
+// for (const sprite of sprites) {
+//     console.log(`${sprite.name} Likes: ${sprite.likes.join(', ')}`);
+// }
 sprites.forEach((sprite) => {
     console.log(`${sprite.name} Likes: ${sprite.likes.join(', ')}`);
 });
